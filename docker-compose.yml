@@ -1,0 +1,30 @@
+version: "3.8"
+
+services:
+  frontend:
+    container_name: frontend
+    image: frontend
+    build:
+      context: ./frontend
+      dockerfile: ./Dockerfile
+    volumes:
+      - ./frontend:/app
+    environment:
+      CHOKIDAR_USEPOLLING: "true"
+    command: yarn start
+    ports:
+      - 3000:3000
+
+  backend:
+    container_name: backend
+    image: backend
+    build:
+      context: ./backend
+      dockerfile: ./Dockerfile
+    volumes:
+      - ./backend:/app
+    environment:
+      CHOKIDAR_USEPOLLING: "true"
+    command: yarn start:dev
+    ports:
+      - 8080:3000
