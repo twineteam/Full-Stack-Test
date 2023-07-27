@@ -27,4 +27,4 @@ services:
       CHOKIDAR_USEPOLLING: "true"
     command: yarn start:dev
     ports:
-      - 8080:3000
+      - 8000:8000

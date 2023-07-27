@@ -24,6 +24,7 @@ const TeamAnalytics = () => {
       </Typography.Title>
 
       <Table
+        rowKey={(employee) => employee.id}
         dataSource={employees}
         loading={isLoading}
         columns={[
