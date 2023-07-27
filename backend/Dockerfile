@@ -3,8 +3,11 @@ WORKDIR /app
 COPY package.json .
 COPY yarn.lock .
 RUN yarn install
-ENV CHOKIDAR_USEPOLLING=true
+RUN yarn global add @nestjs/cli
 COPY . .
-CMD [ "yarn", "start"]
+
+ENV CHOKIDAR_USEPOLLING=true
+CMD ["yarn run start"]
+
 
 

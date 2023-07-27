@@ -3,12 +3,12 @@ version: "3.8"
 services:
   frontend:
     container_name: frontend
-    image: frontend
+    image: fst-frontend
     build:
       context: ./frontend
       dockerfile: ./Dockerfile
     volumes:
-      - ./frontend:/app
+      - ./frontend/src:/app/src
     environment:
       CHOKIDAR_USEPOLLING: "true"
     command: yarn start
@@ -17,12 +17,12 @@ services:
 
   backend:
     container_name: backend
-    image: backend
+    image: fst-backend
     build:
       context: ./backend
       dockerfile: ./Dockerfile
     volumes:
-      - ./backend:/app
+      - ./backend/src:/app/src
     environment:
       CHOKIDAR_USEPOLLING: "true"
     command: yarn start:dev
