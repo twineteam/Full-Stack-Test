@@ -11,14 +11,15 @@ export class EmployeesService {
   }
 
   findActiveDataIssues(): Employee[] {
-    const employeesWithCandidate =
+    const employeesAndCandidate =
       this.employeeHelpers.getAllMatchedEmployeesWithCandidate();
-    const employeesWithoutCandidate = employeesWithCandidate.filter(
+    const employeesWithoutCandidate = employeesAndCandidate.filter(
       ({ candidate }) => !Boolean(candidate),
     );
+
     return [
       {
-        dataIssue: 'Missing Candidate info',
+        dataIssue: 'Employees Missing Candidate info',
         number: employeesWithoutCandidate.length,
       },
     ];

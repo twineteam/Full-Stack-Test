@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Layout, Select, Space, Typography } from "antd";
 import DataIssues from "./components/DataIssues";
 import TeamAnalytics from "./components/TeamAnalytics";
+import TeamForm from "./components/TeamForm";
 
 const { Header, Content, Footer } = Layout;
 
@@ -13,17 +14,14 @@ const userOptions = [
   {
     value: "Field restricted User",
     label: "Field restricted User",
-  },
-  {
-    value: "Population restricted User",
-    label: "Population restricted User",
+    hiddenDivisions: ["Sales", "Marketing"],
   },
 ];
 
 const App = () => {
   const [user, setUser] = useState(userOptions[0].value);
   return (
-    <Layout style={{ height: "100vh" }}>
+    <Layout style={{ height: "100%" }}>
       <Header
         style={{
           background: "linear-gradient(0.25turn, #00D38D, #722ED1)",
@@ -41,6 +39,9 @@ const App = () => {
           {user ? (
             <>
               <section>
+                <Typography.Title level={3} style={{ marginBottom: 24 }}>
+                  User
+                </Typography.Title>
                 <Select
                   defaultValue={user}
                   options={userOptions}
@@ -54,6 +55,10 @@ const App = () => {
 
               <section>
                 <TeamAnalytics />
+              </section>
+
+              <section>
+                <TeamForm />
               </section>
             </>
           ) : (
