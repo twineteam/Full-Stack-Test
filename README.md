@@ -88,10 +88,12 @@ docker-compose up
 - Frontend runs at **port 3000**
 - A React application created by create-react-app (not ejected)
 - Components are set up with [AntD design](https://ant.design/)
+- Network requests are made using [Axios](https://axios-http.com/docs/intro)
 
 #### Backend
 
 - Backend runs at **port 8000**
-- Runs using the [NestJS](https://nestjs.com/) framework. It's ok if you are unfamiliar with the framework.
+- Runs using the [NestJS](https://nestjs.com/) framework. It's ok if you are unfamiliar with the framework
+- There is no Database, data is being consumed from JSON files in `/data/{data}.json`, a simple func already exists to read data from these files
 
 ---
