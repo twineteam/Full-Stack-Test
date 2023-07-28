@@ -1,25 +1,8 @@
-import { Button, Card, Input, Select, Space, Spin, Typography } from "antd";
-import React, { useEffect, useState } from "react";
-import employeesApi, { Employee } from "../network/employeesApi";
+import { Button, Card, Input, Select, Space, Typography } from "antd";
+import React, { useState } from "react";
 
 const TeamForm = () => {
-  const [isLoading, setIsLoading] = useState(false);
-  const [employees, setEmployees] = useState<Employee[]>([]);
-
   const [division, setDivision] = useState("");
-
-  useEffect(() => {
-    const getEmployees = async () => {
-      setIsLoading(true);
-      const response = await employeesApi.fetchEmployees();
-      setEmployees(response.data);
-      setIsLoading(false);
-    };
-
-    getEmployees();
-  }, []);
-
-  if (isLoading) return <Spin />;
 
   return (
     <>
