@@ -19,7 +19,7 @@ const userOptions = [
 ];
 
 const App = () => {
-  const [user, setUser] = useState(userOptions[0].value);
+  const [user, setUser] = useState(userOptions[0]);
   return (
     <Layout style={{ height: "100%" }}>
       <Header
