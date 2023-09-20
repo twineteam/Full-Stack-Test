@@ -10,8 +10,8 @@ export class EmployeeHelpers {
       `${FILE_PATH_PREFIX}/candidates.json`,
       'utf8',
     );
-    const parsedEmployees = JSON.parse(jsonData);
-    return parsedEmployees;
+    const parsedCandidates = JSON.parse(jsonData);
+    return parsedCandidates;
   }
 
   getEmployees(): any[] {
